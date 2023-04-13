@@ -8,8 +8,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.common.utils.checkIfEmpty
 
-abstract class BaseAdapter<VB : ViewDataBinding, T>(private var layout: Int) :
-    RecyclerView.Adapter<BaseAdapter<VB, T>.ViewHolder>() {
+abstract class BaseAdapter<VB : ViewDataBinding, T>(private var layout: Int) : RecyclerView.Adapter<BaseAdapter<VB, T>.ViewHolder>() {
 
     /**
      * This is the list which is displayed to the User

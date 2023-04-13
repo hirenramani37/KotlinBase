@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">KotlinBase</string>
+    <string name="app_name">demo</string>
 
     <string name="no_internet">No Internet Connected</string>
     <string name="msg_no_internet">No Internet connection found. Check your connection try again.</string>

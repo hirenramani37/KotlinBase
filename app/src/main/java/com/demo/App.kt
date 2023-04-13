@@ -1,4 +1,4 @@
-package com.your_app_directory_name
+package com.demo
 
 import android.app.Application
 import android.content.Context

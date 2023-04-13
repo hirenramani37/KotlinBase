@@ -3,8 +3,8 @@ package com.common.data.network
 import com.common.data.network.api.IBaseService
 import com.common.data.network.model.ResponseRefreshToken
 import com.google.gson.Gson
-import com.your_app_directory_name.App
-import com.your_app_directory_name.BuildConfig
+import com.demo.App
+import com.demo.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -13,9 +13,7 @@ import org.json.JSONObject
 import java.io.IOException
 
 
-/**
- * created by Nikul on 10/2/21
- */
+
 class AuthInterceptor : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         val pref = App.getInstance().getPref()
@@ -39,7 +37,7 @@ class AuthInterceptor : Interceptor {
         if (isTokenExpired) {
             val client = OkHttpClient()
             val request: Request = Request.Builder()
-                .url(BuildConfig.BaseUrl2 + "refreshToken")
+                .url(BuildConfig.BaseUrl)
                 .addHeader(IBaseService.Authorization, "Bearer ${pref.authToken}")
                 .addHeader(IBaseService.IS_REFRESH_TOKEN, "true")
                 .build()

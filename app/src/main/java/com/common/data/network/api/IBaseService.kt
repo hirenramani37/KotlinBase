@@ -1,7 +1,9 @@
 package com.common.data.network.api
 
-import com.common.data.network.AuthInterceptor
-import com.your_app_directory_name.BuildConfig
+import com.demo.App
+import com.demo.BuildConfig
+import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.ObsoleteCoroutinesApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import java.util.concurrent.TimeUnit
@@ -13,33 +15,34 @@ interface IBaseService {
         const val IS_REFRESH_TOKEN = "isRefreshToken"
         const val Accept = "Accept"
         const val DeviceType = "device-type"
-        private const val TIME_OUT = 120L
+        private const val AcceptLanguage = "Accept-Language"
+        private const val ContentType = "Content-Type"
+        //        private const val TIME_OUT = 120L
+        private const val TIME_OUT = 20L
 
-        fun getOkHttpClient(needEncrypt: Boolean): OkHttpClient {
+        @ObsoleteCoroutinesApi
+        @DelicateCoroutinesApi
+        fun getOkHttpClient(): OkHttpClient {
+            val pref = App.getInstance().getPref()
             val httpClient = OkHttpClient.Builder()
             httpClient.connectTimeout(TIME_OUT, TimeUnit.SECONDS)
             httpClient.readTimeout(TIME_OUT, TimeUnit.SECONDS)
             httpClient.writeTimeout(TIME_OUT, TimeUnit.SECONDS)
 
-            if (needEncrypt) {
-//                httpClient.addInterceptor(EncryptionInterceptor())
-//                httpClient.addInterceptor(DecryptionInterceptor())
-            }
-            httpClient.addInterceptor(AuthInterceptor())
 
-//            httpClient.addInterceptor { chain ->
-//                val original = chain.request()
-//                val requestBuilder = original.newBuilder()
-//                    .method(original.method, original.body)
-//                    .header(Accept, "application/json")
-//                    .header(DeviceType, "A")
-//
-//                if (!pref.authToken.isNullOrBlank()) {
-//                    requestBuilder.header(Authorization, "Bearer ${pref.authToken}")
-//                }
-//
-//                return@addInterceptor chain.proceed(requestBuilder.build())
-//            }
+
+            httpClient.addInterceptor { chain ->
+                val original = chain.request()
+                val requestBuilder = original.newBuilder()
+                    .method(original.method, original.body)
+                    .header(Accept, "application/json")
+                    .header(ContentType, "multipart/form-data")
+
+                if (!pref.authToken.isNullOrBlank())
+                    requestBuilder.header(Authorization, "${pref.authToken}")
+
+                return@addInterceptor chain.proceed(requestBuilder.build())
+            }
 
             if (BuildConfig.DEBUG) {
                 val logging = HttpLoggingInterceptor()

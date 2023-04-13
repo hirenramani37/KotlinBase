@@ -14,7 +14,7 @@ import com.common.data.database.daos.AppDao
 import com.common.data.prefs.SharedPref
 import com.common.utils.AppLoader
 import com.google.android.material.snackbar.Snackbar
-import com.your_app_directory_name.App
+import com.demo.App
 import kotlinx.coroutines.channels.ReceiveChannel
 
 

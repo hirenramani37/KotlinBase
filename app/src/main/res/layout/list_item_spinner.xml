@@ -9,9 +9,6 @@
         tools:context="com.common.utils.SpinnerArrayAdapter"
         tools:text="aldf dsk" />
 
-    <!--    todo as per your design-->
-    <!--    android:padding="@dimen/_8sdp"-->
-    <!--    android:textColor="@color/colorWhite"-->
-    <!--    android:textSize="@dimen/_12sdp"-->
+
 
 </layout>

@@ -3,7 +3,7 @@ package com.common.data.network.api
 import com.common.data.network.model.ResponseUser
 import com.common.data.network.model.request.ReqLogin
 import com.google.gson.GsonBuilder
-import com.your_app_directory_name.BuildConfig
+import com.demo.BuildConfig
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -23,8 +23,8 @@ interface IApiService2 : IBaseService {
     companion object {
         fun getService(needEncrypt: Boolean): IApiService2 {
             return Retrofit.Builder()
-                .baseUrl(BuildConfig.BaseUrl2)
-                .client(IBaseService.getOkHttpClient(needEncrypt))
+                .baseUrl(BuildConfig.BaseUrl)
+                .client(IBaseService.getOkHttpClient())
                 .addConverterFactory(
                     GsonConverterFactory.create(
                         GsonBuilder().setLenient().create()

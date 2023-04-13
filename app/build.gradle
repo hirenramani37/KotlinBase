@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 33
 
     buildFeatures {
         dataBinding = true
@@ -15,15 +15,14 @@ android {
 
     defaultConfig {
         applicationId "com.example.kotlinbase"
-        minSdkVersion 21
-        targetSdkVersion 31
+        minSdkVersion 23
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         //Change your API url here
-        buildConfigField 'String', 'BaseUrl', '\"https://3eenpatti.com/api/\"'
-        buildConfigField 'String', 'BaseUrl2', '\"http://192.168.0.26:7777/\"'
+        buildConfigField 'String', 'BaseUrl', '\"https://fakestoreapi.com/\"'
 
         kapt {
             arguments {

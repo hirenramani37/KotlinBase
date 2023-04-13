@@ -1,12 +1,11 @@
-package com.your_app_directory_name.ui.main
+package com.demo.ui.main
 
 import android.os.Bundle
 import android.view.View
-import androidx.activity.viewModels
 import androidx.fragment.app.viewModels
 import com.common.base.BaseFragment
-import com.your_app_directory_name.R
-import com.your_app_directory_name.databinding.FragmentMainBinding
+import com.demo.R
+import com.demo.databinding.FragmentMainBinding
 
 class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main) {
 

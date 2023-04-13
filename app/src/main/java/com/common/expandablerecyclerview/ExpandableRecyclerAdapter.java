@@ -32,8 +32,7 @@ import java.util.Map;
  * {@link #notifyChildChanged(int, int)}
  * methods and not the notify methods of RecyclerView.Adapter.
  */
-public abstract class ExpandableRecyclerAdapter<P extends Parent<C>, C, PVH extends ParentViewHolder, CVH extends ChildViewHolder>
-        extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public abstract class ExpandableRecyclerAdapter<P extends Parent<C>, C, PVH extends ParentViewHolder, CVH extends ChildViewHolder> extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private static final String EXPANDED_STATE_MAP = "ExpandableRecyclerAdapter.ExpandedStateMap";
     /**

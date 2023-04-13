@@ -6,7 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.your_app_directory_name.ui.main.MainActivity">
+        tools:context="com.demo.ui.main.MainActivity">
 
         <TextView
             android:id="@+id/textMessage"

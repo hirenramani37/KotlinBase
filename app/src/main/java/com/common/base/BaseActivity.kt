@@ -13,8 +13,8 @@ import com.common.data.prefs.SharedPref
 import com.common.multilanguage.LocaleManager
 import com.common.utils.AppLoader
 import com.google.android.material.snackbar.Snackbar
-import com.your_app_directory_name.App
-import com.your_app_directory_name.R
+import com.demo.App
+import com.demo.R
 import kotlinx.coroutines.channels.ReceiveChannel
 import org.jetbrains.anko.alert
 import org.jetbrains.anko.contentView
@@ -25,8 +25,7 @@ import java.net.ConnectException
 import java.net.SocketTimeoutException
 
 
-abstract class BaseActivity<VB : ViewDataBinding>(private val layoutRes: Int) :
-    AppCompatActivity() {
+abstract class BaseActivity<VB : ViewDataBinding>(private val layoutRes: Int) : AppCompatActivity() {
 
     protected lateinit var binding: VB
     protected val listSubscription = ArrayList<ReceiveChannel<*>>()
@@ -44,12 +43,7 @@ abstract class BaseActivity<VB : ViewDataBinding>(private val layoutRes: Int) :
         super.attachBaseContext(if (base != null) LocaleManager.setLocale(base) else base)
     }
 
-    /**
-     * Use this method when user manually change the language from app.
-     * Usage:
-     *   setNewLocale(LocaleManager.ENGLISH)
-     *   setNewLocale(LocaleManager.GERMAN)
-     * */
+
     protected fun setNewLocale(language: String) {
         LocaleManager.setNewLocale(this, language)
         recreate()

@@ -5,7 +5,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.your_app_directory_name.ui.main.RefreshTokenActivity">
+        tools:context="com.demo.ui.main.RefreshTokenActivity">
 
         <Button
             android:id="@+id/btnLogin"

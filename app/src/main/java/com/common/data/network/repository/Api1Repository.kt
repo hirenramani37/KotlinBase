@@ -15,7 +15,7 @@ class Api1Repository(private val apiService: IApiService1) : BaseRepository() {
         fun getInstance(): Api1Repository {
 
             return instance ?: synchronized(this) {
-                instance ?: Api1Repository(IApiService1.getService(false))
+                instance ?: Api1Repository(IApiService1.getService())
                     .also {
                         instance = it
                     }

@@ -1,15 +1,15 @@
-package com.your_app_directory_name.ui.main
+package com.demo.ui.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.common.base.BaseViewModel
-import com.common.data.network.model.UserInfo
+import com.common.data.network.model.data_class_exmple
 import kotlinx.coroutines.launch
 
 class MainFragmentViewModel : BaseViewModel() {
-    private val _mtUserInfo = MutableLiveData<List<UserInfo>>()
-    val userInfo: LiveData<List<UserInfo>> = _mtUserInfo
+    private val _mtUserInfo = MutableLiveData<List<data_class_exmple.data_class_exmpleItem>>()
+    val userInfo: LiveData<List<data_class_exmple.data_class_exmpleItem>> = _mtUserInfo
 
     private val _mtUserInfoError = MutableLiveData<Throwable>()
     val mtUserInfoError: LiveData<Throwable> = _mtUserInfoError

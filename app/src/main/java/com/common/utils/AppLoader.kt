@@ -2,7 +2,7 @@ package com.common.utils
 
 import android.app.Activity
 import android.app.Dialog
-import com.your_app_directory_name.R
+import com.demo.R
 
 class AppLoader(activity: Activity) {
     private var loader: Dialog = Dialog(activity)

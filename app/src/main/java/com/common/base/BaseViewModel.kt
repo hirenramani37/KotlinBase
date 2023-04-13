@@ -11,7 +11,7 @@ import com.common.data.network.repository.Api1Repository
 import com.common.data.network.repository.Api2Repository
 import com.common.data.prefs.SharedPref
 import com.common.data.database.daos.AppDao
-import com.your_app_directory_name.App
+import com.demo.App
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

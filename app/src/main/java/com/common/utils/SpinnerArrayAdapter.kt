@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.databinding.DataBindingUtil
-import com.your_app_directory_name.R
-import com.your_app_directory_name.databinding.ListItemSpinnerBinding
+import com.demo.R
+import com.demo.databinding.ListItemSpinnerBinding
 import java.util.*
 
 class SpinnerArrayAdapter(
